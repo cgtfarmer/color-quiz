@@ -1,0 +1,14 @@
+Scrape this site for the names and hex codes, make into JSON file
+https://www.w3schools.com/colors/colors_groups.asp
+
+Make tables with checkboxes for each set of colors
+
+Do the simple ones only using ff/80 bytes for starts,
+
+then slowly layer on more complex "real" colors with names from that site
+
+Load up the JSON file with AJAX call, generate options tables and whatnot (I guess)
+
+Then just randomly draw from selected body of colors - keep track of how many correct/incorrect since start of session
+
+

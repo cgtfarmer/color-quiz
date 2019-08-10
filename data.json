@@ -1,0 +1,12 @@
+{
+	"hues": [
+		{"question": "#ff0000",
+		 "answer": "0"},
+
+		{"question": "#00ff00",
+		 "answer": "4"},
+
+		{"question": "#0000ff",
+		 "answer": "8"}
+	]
+}

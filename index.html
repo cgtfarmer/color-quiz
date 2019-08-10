@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"/>
+		<title>Quiz: Colors</title>
+		<link rel="stylesheet" href="assets/css/main.css"/>
+	</head>
+	<body>
+
+		<article id="page-grid" ng-app="myApp" ng-controller="myCtrl">
+			<header id="page-header">
+				<h1>Quiz: Colors</h1>
+			</header>
+
+			<section id="page-menu">
+
+				<section id="mode-menu">
+					<header>
+						<h3>Quiz Modes</h3>
+					</header>
+					<section id="mode-options" class="flex section-body">
+						<div>
+							<label>
+								<input type="radio" name="quiz-mode" value="scale-degree" checked ng-click="alterActiveMode($event)"/>
+								Hues
+							</label>
+
+							<br/>
+
+							<label>
+								<input type="radio" name="quiz-mode" value="chord" ng-click="alterActiveMode($event)"/>
+								Grayscale
+							</label>
+
+							<br/>
+
+							<label>
+								<input type="radio" name="quiz-mode" value="both" ng-click="alterActiveMode($event)"/>
+								Both
+							</label>
+						</div>
+					</section>
+				</section>
+
+				<section id="key-menu">
+					<header>
+						<h3>Options</h3>
+					</header>
+
+					<div id="key-options" class="flex section-body">
+
+						<!-- <input id="value-sensitivity" type="range" min="1" max="4" ng-model="valueSensitivity" ng-change="filterColors()"> -->
+
+						<section id="color-options-selection">
+							
+							<label ng-repeat="colorOption in colorOptions">
+								<input type="checkbox" value="{{colorOption}}" ng-checked="true" ng-click="alterActiveKeys($event)"/>
+								<p>{{colorOption}}</p>
+							</label>
+
+						</section>
+
+					</div>
+
+				</section>
+			</section>
+
+			<section id="page-main">
+
+				<section>
+					<header>
+						<h2>Question</h2>
+					</header>
+
+					<section class="section-body">
+
+						<table id="question-table">
+							<tr>
+								<th>
+									<h3>Color</h3>
+								</th>
+							</tr>
+
+							<tr>
+								<td>
+									<div id="color-question" style="background-color: {{question}}"></div>
+								</td>
+							</tr>
+						</table>
+
+					</section>
+				</section>
+
+				<section>
+					<header>
+						<h2>Answer</h2>
+					</header>
+
+					<section class="section-body">
+						<section id="answer-body">
+							<input id="answer-input" type="text" autocorrect="off" autocapitalize="off" autocomplete="off" spellcheck="false" ng-model="answer" ng-keypress="checkAnswer($event)"><br>
+							<input id="answer-submit" type="button" value="Submit" ng-click="checkAnswer()"><br>
+
+							<h1 id="result-icon">&#x2713;</h1>
+						</section>
+					</section>
+
+				</section>
+
+			</section>
+
+			<section id="page-help">
+				<input id="help-btn" type="button" value="Show Help" ng-model="helpBtn" ng-click="toggleHelpTable()"><br>
+
+				<section id="help-tables-container">
+
+					<h2>Triads</h2>
+
+					<p>1: Major, 2: Minor, 3: Minor, 4: Major, 5: Major, 6: Minor, 7: diminished</p>
+
+					<table id="triads-help-table" class="help-table">
+						<tr>
+							<th><h2>Key</h2></th>
+							<th><h2>1</h2></th>
+							<th><h2>2</h2></th>
+							<th><h2>3</h2></th>
+							<th><h2>4</h2></th>
+							<th><h2>5</h2></th>
+							<th><h2>6</h2></th>
+							<th><h2>7</h2></th>
+						</tr>
+
+						<tr ng-repeat="(key, scaleDegrees) in data.triads">
+							<td>{{ key }}</td>
+							<td>{{ scaleDegrees["1"] }}</td>
+							<td>{{ scaleDegrees["2"] }}</td>
+							<td>{{ scaleDegrees["3"] }}</td>
+							<td>{{ scaleDegrees["4"] }}</td>
+							<td>{{ scaleDegrees["5"] }}</td>
+							<td>{{ scaleDegrees["6"] }}</td>
+							<td>{{ scaleDegrees["7"] }}</td>
+						</tr>
+					</table>
+
+					<h2>Tetrads</h2>
+
+					<p>1: Major 7, 2: Minor 7, 3: Minor 7, 4: Major 7, 5: Dominant 7, 6: Minor 7, 7: Half-Diminished 7</p>
+
+					<table id="triads-help-table" class="help-table">
+						<tr>
+							<th><h2>Key</h2></th>
+							<th><h2>1</h2></th>
+							<th><h2>2</h2></th>
+							<th><h2>3</h2></th>
+							<th><h2>4</h2></th>
+							<th><h2>5</h2></th>
+							<th><h2>6</h2></th>
+							<th><h2>7</h2></th>
+						</tr>
+
+						<tr ng-repeat="(key, scaleDegrees) in data.tetrads">
+							<td>{{ key }}</td>
+							<td>{{ scaleDegrees["1"] }}</td>
+							<td>{{ scaleDegrees["2"] }}</td>
+							<td>{{ scaleDegrees["3"] }}</td>
+							<td>{{ scaleDegrees["4"] }}</td>
+							<td>{{ scaleDegrees["5"] }}</td>
+							<td>{{ scaleDegrees["6"] }}</td>
+							<td>{{ scaleDegrees["7"] }}</td>
+						</tr>
+					</table>
+				</section>
+			</section>
+
+			<footer id="page-footer">
+				<p>&copy; 2019 Christian Farmer, All Rights Reserved</p>
+			</footer>
+		</article>
+
+		<script type="text/javascript" src="assets/js/jquery-3.3.1.min.js"></script>
+		<script type="text/javascript" src="assets/js/angular-1.7.8.min.js"></script>
+		<script type="text/javascript" src="assets/js/main.js"></script>
+
+	</body>
+</html>

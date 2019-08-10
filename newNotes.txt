@@ -1,0 +1,137 @@
+
+Figure out how good color matching works
+	why is the complement of #ff8000, #993366? Wait, it's not? They just happen to look really good together - because the second one is pretty close to the triadic match of the first one first is H = 30, second is (240+30 =) 270
+
+	**Teach that specific trick: Finding triadic matches Red = (0, 120, 240), Anything else = (0+H, 120+H, 240+H), where H is the hue value of your chosen hue
+	RED (Hue = 0)
+		Color 1: HSL = (0, 100%, 50%)
+		Color 2: HSL = (120, 100%, 50%)
+		Color 3: HSL = (240, 100%, 50%)
+	ORANGE (Hue = 30)
+		Color 1: HSL = ((0+30), 100%, 50%)
+		Color 2: HSL = ((120+30), 100%, 50%)
+		Color 3: HSL = ((240+30), 100%, 50%)
+		---
+		Color 1: HSL = (30, 100%, 50%)
+		Color 2: HSL = (150, 100%, 50%)
+		Color 3: HSL = (270, 100%, 50%)
+	etc.
+
+
+	FINALLY GOT IT - HSL
+		Complementary
+			Choose an a = HSL
+			copy it to b change b[h] to (360-a[h])
+		Triadic, same thing, but split 360 into 3rds
+			0, 120, 240
+			So triadic complement of 30 is (30, 150, 270)
+			The only trick is that you keep the SL values the same
+				EZMODE
+		Tetradic, sort of the same thing
+			Root, Root+60, compliment, compliment+60
+		Monochromatic
+			Keep HS the same, increase (and maybe decrease?) L by 10% increments
+		Analogous (adjacent colors)
+			Keep SL the same, do H ± 30 to get the adjacent hues
+		Compound (split-complementary)
+			"2 adjacent colors to complementary color"
+			Take HSL, find complementary H via (360-H), use H ± 30 as 2 new colors making a triad
+
+	As it pertains to putting together a color scheme/palette thingy for a website, there's some conventional light and dark colors that you usually need and these calculator thingies make them for you:
+		https://www.w3schools.com/colors/colors_complementary.asp
+
+*Turn screen brightness up to properly see colors!*
+Quizzes!
+Value (Grayscale only)
+	hsl(0, 0%, x), where x = (1-100), step 10
+	1. recommend (0, 20, 40, 60, 80, 100) for starts
+	2. then practice (0, 10, 20), and slowly work it into the overall
+	3. then practice (20, 30, 40), and slowly work it into the overall
+
+0   #000000 (0, 0% 0%)
+10  #1a1a1a (0, 0% 10%)
+20  #333333 (0, 0% 20%)
+30  #4d4d4d (0, 0% 30%)
+40  #666666 (0, 0% 40%)
+50  #808080 (0, 0% 50%)
+60  #999999 (0, 0% 60%)
+70  #b3b3b3 (0, 0% 70%)
+80  #cccccc (0, 0% 80%)
+90  #e6e6e6 (0, 0% 90%)
+100 #ffffff (0, 0% 100%)
+
+Hue
+	1. 0, 60, 120, 180, 240, 300 (6)
+	2. 0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330 (12)
+	3. 0, 15, 30, 45, 60, 75, 90, 105, 120, 135, 150, 165, 180, 195, 210, 225, 240, 255, 270, 285, 300, 315, 330, 345
+	4. 0, 7/8, 15, ..., 352/353
+
+Can think of it like : 1-12
+0 - red
+1 - orange
+2 - yellow
+
+0 - red
+0.5 - red-orange
+1 - orange
+1.5 - yellow-orange
+2 - yellow
+
+0 - red
+0.25 - redder red-orange
+0.5 - red-orange
+0.75 - orange-er red-orange
+1 - orange
+1.25 - orange-er yellow-orange
+1.5 - yellow-orange
+1.75 - yellow-er yellow-orange
+2 - yellow
+
+The reason 1-12 makes sense is because red, orange, yellow are more or less considered to be 'distinct'. So that's why it makes sense to have them be discrete, whole values and their 'blends' between other, adjacent, whole color values be fractional
+
+
+Chroma (Saturation)
+
+
+
+0 10 20 30 40 50 60 70 80 90 100
+*	 *	   *	 *	   *	 *
+
+
+# =============================================================================
+
+Okay, so here's the deal
+
+Any visual image can be reduced to 3 components:
+shape
+color
+edge
+
+Shape is the 'contour' or 'outline' that symbolically describes the object, disregarding inner detail, of any sort
+
+Edge is a spectrum of 'hardness' to 'softness' describing lines that make up an image. Shadows tend to be 'softer' and more diffuse, edges of an object that strongly contrast the background might be very 'hard' or sharp. Commonly used, discrete identifiers of edge are: hard, firm, soft, lost
+
+Now, color. Color is broken down into 3 different categories: hue, chroma and value.
+
+Each of these categories really are continuous spectrums, but it seems like license is taken to break them down into discrete values for ease of understanding and communication
+
+Hue: Essentially the colors of the rainbow. Is it blue? Purple? Red? The difference between 'warm/cool' hues is splitting the hue wheel into 2, separating the orange side from the blue side.
+
+Value: White to black. Can be thought of as 'grayscale' - drawing with charcoal/graphite.
+
+Chroma: Seems to be describing 'saturation'. A high 'chroma' means that the color is highly saturated - so if you choose a purple hue and set the chroma to 'max', the color is basically just the hue that you chose. As you lower the chroma, the color gets closer and closer to grey - in other words, more 'dull'. High chroma = matches the hue, really low chroma = grey, med chroma = a softer, less pure, dimmer version of the pure hue.
+
+Chroma can be manipulated by blending colors. Can take a pure hue and mix it with grey to bring it closer to grey and lower the chroma. Can also take the hue's *compliment* and mix it together to have a more dramatic affect in bringing it toward grey and lowering the chroma
+
+
+Shade, Tint, Tone
+(From: https://www.canva.com/colors/color-wheel/)
+
+A shade of a hue is when you add black to a hue
+A tint of a hue is when you add white to the hue
+A tone of a hue is when you add black AND white to the hue
+
+# =============================================================================
+
+
+

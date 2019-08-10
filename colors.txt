@@ -1,0 +1,57 @@
+
+color	hsl		hex
+red		0		ff0000|primary
+orange	30		ff8000
+yellow	60		ffff00|secondary
+lgreen	90		80ff00
+green	120		00ff00|primary
+gr-bl	150		00ff80
+cyan	180		00ffff|secondary
+lblue	210		0080ff
+blue	240		0000ff|primary
+purp	270		8000ff
+magenta	300		ff00ff|secondary
+lred	330		ff0080
+
+black	000000
+gray	808080
+silver	c0c0c0
+white	ffffff
+
+Lightness
+	Increases RGB values such that all non-ff bytes will reach ff at the same time
+Darkness
+	Decreases RGB values such that all non-00 bytes will reach 00 at the same time
+Saturation
+	For all RGB bytes below 80, increases
+	For all RGB bytes above 80, decreases
+		At a rate such that all bytes reach 80 at the same time -
+
+"Highly saturated colors are bright. Desaturated colors have less pigment"
+
+
+maroon	800000
+olive	808000
+lime	00ff00
+green	008000
+aqua	00ffff (cyan)
+teal	008080
+blue	0000ff
+navy	000080
+fushia	ff00ff (magenta)
+purple	800080
+
+ROYGBIV
+*Indigo is dark purple
+*Violet is like a light pink
+
+s=100%, l=100%	: ffffff ; 1/1 white
+s=100%, l=87.5%	: ffc0c0 ; 1/4 red, 3/4 white
+s=100%, l=75%	: ff8080 ; 1/2 red, 1/2 white
+s=100%, l=62.5%	: ff4040 ; 3/4 red, 1/4 white
+s=100%, l=50%	: ff0000 ; 1/1 red
+s=100%, l=37.5% : c00000 ; 3/4 red, 1/4 black
+s=100%, l=25%	: 800000 ; 1/2 red, 1/2 black
+s=100%, l=12.5% : 400000 ; 1/4 red, 3/4 black
+s=100%, l=0%	: 000000 ; 1/1 black
+
