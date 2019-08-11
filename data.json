@@ -3,10 +3,37 @@
 		{"question": "#ff0000",
 		 "answer": "0"},
 
+		{"question": "#ff8800",
+		 "answer": "1"},
+
+		{"question": "#ffff00",
+		 "answer": "2"},
+
+		{"question": "#80ff00",
+		 "answer": "3"},
+
 		{"question": "#00ff00",
 		 "answer": "4"},
 
+		{"question": "#00ff80",
+		 "answer": "5"},
+
+		{"question": "#00ffff",
+		 "answer": "6"},
+
+		{"question": "#0080ff",
+		 "answer": "7"},
+
 		{"question": "#0000ff",
-		 "answer": "8"}
+		 "answer": "8"},
+
+		{"question": "#8000ff",
+		 "answer": "9"},
+
+		{"question": "#ff00ff",
+		 "answer": "10"},
+
+		{"question": "#ff0080",
+		 "answer": "11"}
 	]
 }

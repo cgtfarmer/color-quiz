@@ -54,8 +54,13 @@
 
 						<section id="color-options-selection">
 							
-							<label ng-repeat="colorOption in colorOptions">
+							<label ng-repeat="colorOption in colorOptions" ng-if="$first">
 								<input type="checkbox" value="{{colorOption}}" ng-checked="true" ng-click="alterActiveKeys($event)"/>
+								<p>{{colorOption}}</p>
+							</label>
+
+							<label ng-repeat="colorOption in colorOptions" ng-if="$middle || $last">
+								<input type="checkbox" value="{{colorOption}}" ng-click="alterActiveKeys($event)"/>
 								<p>{{colorOption}}</p>
 							</label>
 

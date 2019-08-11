@@ -22,13 +22,13 @@ var activeKeys = ["0"];
 initInputsToCorrectState();
 
 app.controller('myCtrl', function($scope, $http) {
-	$scope.modeSelection = "Scale Degree";
 	$scope.userSelectedKey = "0";
 
-	// $scope.backgroundColor = "#f00";
-
-	$http.get("data.json")
-		.then(function(response) {
+	$http.get("data.json", {
+		cache: false,
+		headers: {'Cache-Control': 'no-cache',
+				  'Pragma':'no-cache'}
+	}).then(function(response) {
 			console.log(response);
 			$scope.data = response.data;
 
@@ -182,21 +182,10 @@ function displayQuestion($scope) {
 
 	$scope.chordTypeSelection = currentChordType;
 
-	var currentMode;
-	if(selectedMode.toLowerCase() == "both") {
-		rn = Math.floor(Math.random() * modes.length);
-		currentMode = modes[rn];
-	} else {
-		currentMode = selectedMode;
-	}
-	console.log("Mode: " + currentMode);
-
-	$scope.modeSelection = currentMode;
-
 	var length = activeKeys.length;
 	if(length > 0) {
 		rn = Math.floor(Math.random() * length);
-		$scope.keySelection = rn;
+		$scope.keySelection = activeKeys[rn];
 		console.log("Key Selection: " + $scope.keySelection);
 
 		$scope.question = $scope.data.hues[$scope.keySelection]["question"].toLowerCase();
