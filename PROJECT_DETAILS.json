@@ -1,0 +1,31 @@
+{
+	"title" : "Color Quiz", 
+	"date" : "2019-09", 
+	"revenue" : "No", 
+	"status" : "In Progress", 
+	"summary" : "The purpose of this quiz is to assist people with learning color theory",
+	"description" : "A simple AngularJS application", 
+	"future-work" : [
+						"Continue experimenting with/refining the teaching system"
+				    ],
+	"live-link" : "Contact me", 
+	"demonstration-link" : "Contact me", 
+	"repository-link" : "Contact me", 
+	"supported-platforms" : ["Windows", "macOS", "Linux"],
+	"supported-browsers" : ["Mozilla Firefox, Safari"], 
+	"version-control" : "Git", 
+	"development-methods" : "Agile", 
+	"team-size" : "1", 
+	"lines-of-code" : "599", 
+	"user-interface" : "Web", 
+	"keywords" : ["Games", "UI/UX"], 
+	"languages" : ["HTML", "CSS", "JavaScript"],
+	"libraries" : [
+					"JavaScript: jQuery, AngularJS"
+				  ],
+	"external-programs" : "None", 
+	"development-os" : "Linux: Arch", 
+	"deployment-os" : "Linux: Debian", 
+	"web-server" : "Apache", 
+	"databases" : ["None"]
+}
