@@ -2,7 +2,7 @@
 	"title" : "Color Quiz", 
 	"date" : "2019-09", 
 	"revenue" : "No", 
-	"status" : "In Progress", 
+	"status" : "Frozen", 
 	"summary" : "The purpose of this quiz is to assist people with learning color theory",
 	"description" : "A simple AngularJS application", 
 	"future-work" : [
